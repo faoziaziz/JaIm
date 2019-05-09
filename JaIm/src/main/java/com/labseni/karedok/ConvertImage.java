@@ -27,7 +27,7 @@ public class ConvertImage {
     	 * byte array. The second part of the code shows how to change byte array
     	 * back to a image
     	 */
-        File file = new File("gambar/rose.jpeg");
+        File file = new File("gambar/print.png");
         System.out.println(file.exists() + "!!");
  
         FileInputStream fis = new FileInputStream(file);
@@ -61,7 +61,7 @@ public class ConvertImage {
  
         //Before is how to change ByteArray back to Image
         ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
-        Iterator<?> readers = ImageIO.getImageReadersByFormatName("jpg");
+        Iterator<?> readers = ImageIO.getImageReadersByFormatName("png");
         //ImageIO is a class containing static convenience methods for locating ImageReaders
         //and ImageWriters, and performing simple encoding and decoding. 
  
@@ -81,8 +81,8 @@ public class ConvertImage {
         //bufferedImage is the RenderedImage to be written
         Graphics2D g2 = bufferedImage.createGraphics();
         g2.drawImage(image, null, null);
-        File imageFile = new File("gambar/newrose2.jpeg");
-        ImageIO.write(bufferedImage, "jpg", imageFile);
+        File imageFile = new File("gambar/newrose2.bmp");
+        ImageIO.write(bufferedImage, "bmp", imageFile);
         //"jpg" is the format of the image
         //imageFile is the file to be written to.
         
